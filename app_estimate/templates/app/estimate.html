@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estimate</title>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;515;600;700&display=swap" rel="stylesheet">
+        <style>
+            @font-face {font-family: Quicksand; src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;515;600;700&display=swap')}
+        
+
+         html { -webkit-print-color-adjust: exact; } 
+         body{
+            font-family: Quicksand,sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            font-weight: 500;
+         }
+         table {
+            border-collapse: collapse;
+            width: 100%;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3{
+            margin: 0;
+        }
+        p{
+            margin: 0;
+        }
+        .step-box{
+            padding: 10px;
+            border-width: 1px;
+            border-color: rgb(224, 224, 224);
+            border-style: solid;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="estimate-design" style="font-size: 13px;">
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 30%;">
+                        <img src="https://www.globalmediakit.com/assets/images/logo.png" style="width:100%"  />
+                    </td>
+                    
+                    <td style="text-align: right;">
+                        <h1 class="estimate-head"><span > Media Plan </span></h1>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td style="width: 40%;">
+                        <div style="
+                        font-weight: 400;
+                        font-size: 14px;
+                        padding-top:5px ;
+                        margin-top: 3rem;
+                        overflow: hidden;
+                        position: relative;
+                        margin-bottom: 42px;
+                        border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;padding-left: 1rem;background: #e5e5e5;">
+                            <p style="margin: 0;">Plan Name: {{Campaign.PlanName}}</p>
+                            <p style="margin: 0;">Brand Name: 
+                                {% if Campaign.BrandName == '' %}
+                                    N/A
+                                {% else %}
+                                {{Campaign.BrandName}} 
+                                {% endif %}
+                                
+                            </p>
+                            <p style="margin: 0;">Currency: {{Campaign.Currency}}</p>
+                            <p style="margin: 0;">Brand Category: 
+                                {% if Campaign.BrandCategory == '' %}
+                                    N/A
+                                {% else %}                                
+                                {% for BrandCategory in Campaign.BrandCategory %}
+                                <span>{{BrandCategory.MatchingCategory}}</span> ,
+                                
+                                {% endfor %}
+                                {% endif %}
+                            </p>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td style="
+                    width: 65%;">
+                    <img src="https://s3.ap-south-1.amazonaws.com/api-hosting-gmk/76ee7032240d4b32a07cce338ef19a7c/Logo/GMK_FILE_DATA_SERVICE/Logo/1640854706430estimate-banner.png" />
+                    </td>
+                    <td style="
+                    text-align: right;
+                    font-size: 14px;
+                    width: 35%;
+                    padding: 0;
+                    vertical-align: baseline;">
+                        <div style="
+                        font-weight: 400;
+                        font-size: 14px;
+                        padding-top:5px ;
+                        margin-top: 3rem;
+                        overflow: hidden;
+                        position: relative;
+                        margin-bottom: 42px;
+                        border-top-left-radius: 15px;
+                        border-bottom-left-radius: 15px;padding-right: 1rem;background: #e5e5e5;">
+                            <p style="margin: 0;">Created Date: {{Campaign.PlanCreatedDate}}</p>
+                            <p style="margin: 0;">Tentative Start Date: {{Campaign.StartDate}} </p>
+                            <p style="margin: 0;">Plan Valid Until: {{Campaign.PlanExpiryDate}}</p>
+                            <p style="margin: 0;">Campaign Objective:
+                                {% if Campaign.CampaignObjective == '' %}
+                                    N/A
+                                {% else %}
+                                
+            {% for CampaignObjective in Campaign.CampaignObjective %}
+                               <span> {{CampaignObjective.CampaignObjective}} </span>,
+                                
+            {% endfor %}
+                                {% endif %}
+                            </p>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%;font-weight: 400;background-color: #e5e5e5;padding: 5px;margin-bottom: 20px;">                    
+                <tr>
+                    <td style="width: 100%;" colspan="2">
+                        <h1 style="font-size: 15px;">Media Plan generated with globalmediakit.com</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 10%;">
+                        <img src="https://s3.ap-south-1.amazonaws.com/api-hosting-gmk/76ee7032240d4b32a07cce338ef19a7c/Logo/GMK_FILE_DATA_SERVICE/Logo/1640854788384gmk_ttl.png" style="width: 100%;" />
+                    </td>
+                    <td>
+                        <p style="font-size: 14px;">
+                            Global Media Kit is the largest integrated media services and ad booking platform for Emerging Markets. We help Advertisers and Media Service Providers to search, create, buy and manage ad opportunities, all through our AI-Powered workflow tool.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="margin-bottom: 20px;background-color: #fcfcfc;">
+                <tr>
+                    <td colspan="3">
+                        <p style="font-size: 15px;margin: 0;padding: 10px;padding-bottom: 0;">Your plan is currently under Draft mode.</p>
+                        <h2 style="color: #fc4710;font-size: 19px;padding: 10px;padding-bottom: 0;">What's next ?</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 5px;">
+                        <div class="step-box">
+                            <div style="
+                            display: inline-block;
+                            width: 18%;
+                            text-align: center;">
+                                <h2 style="
+                                font-size: 50px;
+                                color: #fc4710;
+                                line-height: 0.8;">1</h2>
+                            </div>
+                            <div style="
+                                display: inline-block;
+                                width: 80%;
+                                text-align: left;height: 250px;">
+                                <h3 style="
+                                text-align: center;
+                                font-weight: 400;
+                                position: relative;
+                                bottom: 8px;
+                                font-size: 13px;
+                                color: #000;"><b>Booking</b> - Global Media Consultants help with the schedule and book your campaign.</h3>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="padding: 5px;">
+                        <div class="step-box">
+                            <div style="
+                            display: inline-block;
+                            width: 18%;
+                            text-align: center;">
+                                <h2 style="
+                                font-size: 50px;
+                                color: #fc4710;
+                                line-height: 0.8;">2</h2>
+                            </div>
+                            <div style="
+                                display: inline-block;
+                                width: 80%;
+                                text-align: left;height: 250px;">
+                                <h3 style="
+                                text-align: center;
+                                font-weight: 400;
+                                position: relative;
+                                bottom: 8px;
+                                font-size: 13px;
+                                color: #000;"><b>Creatives</b> - Share campaign creatives for approval. <br/></h3>
+                                
+                            </div>
+                        </div>
+                    </td>
+                    <td style="padding: 5px;">
+                        <div class="step-box">
+                            <div style="
+                            display: inline-block;
+                            width: 18%;
+                            text-align: center;">
+                                <h2 style="
+                                font-size: 50px;
+                                color: #fc4710;
+                                line-height: 0.8;">3</h2>
+                            </div>
+                            <div style="
+                                display: inline-block;
+                                width: 80%;
+                                text-align: left;height: 250px;">
+                                <h3 style="
+                                text-align: center;
+                                font-weight: 400;
+                                position: relative;
+                                bottom: 8px;
+                                font-size: 13px;
+                                color: #000;"><b>Launch</b> - Launch your campaign on schedule via trusted media partners </h3>
+                                
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+
+
+
+            <table style="margin-bottom: 10px;">
+                <tr>
+                    <td style="width: 30%;vertical-align: baseline;">
+                        <p style="border: 1px solid #dedede;color: #f49e3c; text-align: center; padding-top: 10px;">Selected Media Options</p>
+                    </td>
+                </tr>
+            </table>
+
+
+            {% for CampaignPlanDetail in CampaignDetails %}
+                    
+              
+            <table style="width: 100%;background: #f1f1f1;margin-bottom: 10px;">
+                <tr>
+                    <td style="padding: 5px 5px;font-weight: 400;">
+                        <p>{{CampaignPlanDetail.MediaAdTypeDetail.MediaTypeName}}-{{CampaignPlanDetail.MediaDetail.CityRegion}}</p>
+                        <p>
+                            <span style="text-transform: capitalize;">{{CampaignPlanDetail.MediaDetail.CountryEvent}}</span> - {{CampaignPlanDetail.VerticalName}}  - {{CampaignPlanDetail.MediaAdTypeDetail.MediaAdType}}
+                        </p>
+                        
+                        <div class="read-more">
+                            <a href="{{CampaignPlanDetail.MediaLink}}" target="_blank">Read More</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+            <table style="width: 100%;box-shadow: 2px 2px 12px -5px #bfbfbf;padding: 10px 10px;border-radius: 12px;background: #f1f1f1;">
+                <tr>
+                    <td>
+                        <div class="item-img">
+                            <img src="{{ImagePath}}{{CampaignPlanDetail.MediaAdTypeDetail.SingleImage}}"  style="
+                            width: 100%;
+                            margin: 0 auto;
+                            display: block;"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+            <p style="page-break-after: always;">&nbsp;</p>
+            {% endfor %}
+
+
+        </div>
+
+    </body>
+</html>
